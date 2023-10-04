@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Details</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="{% url 'offence_page'%}">Offence</a>
+</head>
+<script>
+    function AddTask(){ 
+       
+       var input_1 = document.querySelector("#input_1").value;
+       var input_2 = document.querySelector("#input_2").value;
+       var input_3 = document.querySelector("#input_3").value;
+       var input_4 = document.querySelector("#input_4").value;
+
+     if (input_1.length > 0 && input_2.length > 0 && input_3.length > 0 ) {
+      alert("Your task has been added successfully");
+       } else {
+       alert("Complete all the fields");
+       
+       }
+       
+       var li  = document.getElementById("li")
+       li.innerHTML = document.querySelector("#input1").value
+       document.querySelector("#task-list").append(li)
+       
+
+       document.querySelector("#input-1").value=""
+       document.querySelector("#input-2").value=""
+       document.querySelector("#input-3").value=""
+       document.querySelector("#input-4").value=""
+
+       document.querySelector("#btn-add").disabled = true;
+
+     }
+     function checkInput(){
+       if (document.querySelector("#input-1").value.length > 0 &&
+        document.querySelector("#input-2").value.length > 0  &&
+        document.querySelector("#input-3").value.length > 0  &&
+        document.querySelector("#input-4").value.length > 0){
+
+         document.querySelector("#btn-add").disabled = false;
+         
+       }
+       else{
+         document.querySelector("#btn-add").disabled = true;
+       }
+     }
+
+    
+    
+</script>
+    <section class="#">
+        <h1>WELCOME TO GTS POLICE POST</h1>
+        <h2>CRIMINAL DETAILS</h2>
+    </section>
+    <div class="container-2">
+        <p><form action="form-group" id="space" method="POST"></form></p>
+        
+            
+    
+
+    <form action="#">
+       
+
+        <p><input type="criminal_id" name="criminal_id" id="input_1" placeholder="Criminal_id" onkeyup="checkInput"></p>
+        <p><input type="criminal_name" name="criminal_name" id="input_2" placeholder="criminal_name" onkeyup="checkInput"></p>
+        <p><input type="text" name="Gender" id="input_3" placeholder="Gender" onkeyup="checkInput"></p>
+         
+        <p><input type="text" name="Age" id="input_4" placeholder="Age" onkeyup="checkInput"></p>
+        <p><input type="Next_of_kin" name="Next_of_kin" id="input_5" placeholder="Next_of_kin" onkeyup="checkInput" ></p>
+        <p><input type="text" name="Any_criminal_record" id="input_4" placeholder="Any_criminal_record" onkeyup="checkInput"></p>
+         <ul id="task-list">
+        <p><button id="btn-add" onclick="AddTask()">AddTask</button></p> 
+    
+        </ul>
+          
+      
+      </div>
+       
+          
+          <table>
+
+            <table width="1000px" border="1px" height="200">
+
+            <tr>
+                <th>criminal_id</th>
+                <th>criminal_name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Next_of_kin</th>
+                
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Paul </td>
+                <td>Male</td>
+                <td>21</td>
+                <td>peter</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Isaac</td>
+                <td>Male</td>
+                <td>24</td>
+                <td>john</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>peter</td>
+                <td>Male</td>
+                <td>56</td>
+                <td>Mark</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Julius</td>
+                <td>Male</td>
+                <td>32</td>
+                <td>jane</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Iriam</td>
+                <td>Female</td>
+                <td>21</td>
+                <td>Maria</td>
+            </tr>
+          </table>
+
+        
+     
+</body>
+
+</html>

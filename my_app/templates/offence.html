@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offence Details</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="{% url 'index_page'%}">Back Home</a>
+        
+</head>
+<script>
+    function AddTask(){ 
+       
+       var input_1 = document.querySelector("#input_1").value;
+       var input_2 = document.querySelector("#input_2").value;
+       var input_3 = document.querySelector("#input_3").value;
+       var input_4 = document.querySelector("#input_4").value;
+
+     if (input_1.length > 0 && input_2.length > 0 && input_3.length > 0 ) {
+      alert("Your task has been added successfully");
+       } else {
+       alert("Complete all the fields");
+       
+       }
+       
+       var li  = document.getElementById("li")
+       li.innerHTML = document.querySelector("#input1").value
+       document.querySelector("#task-list").append(li)
+       
+
+       document.querySelector("#input-1").value=""
+       document.querySelector("#input-2").value=""
+       document.querySelector("#input-3").value=""
+       document.querySelector("#input-4").value=""
+
+       document.querySelector("#btn-add").disabled = true;
+
+     }
+     function checkInput(){
+       if (document.querySelector("#input-1").value.length > 0 &&
+        document.querySelector("#input-2").value.length > 0  &&
+        document.querySelector("#input-3").value.length > 0  &&
+        document.querySelector("#input-4").value.length > 0){
+
+         document.querySelector("#btn-add").disabled = false;
+         
+       }
+       else{
+         document.querySelector("#btn-add").disabled = true;
+       }
+     }
+
+    
+    
+</script>
+    <section class="#">
+        <h1>WELCOME TO KK POLICE POST</h1>
+        <h2>OFFENCE DETAILS</h2>
+    </section>
+    <div class="container-2">
+        <p><form action="form-group" id="space" method="POST"></form></p>
+        
+            
+    
+
+    <form action="#">
+       
+
+        <p><input type="Offence_id" name="Offence_id" id="input_1" placeholder="Offence_id" onkeyup="checkInput"></p>
+        <p><input type="Offence_Name" name="Offence_Name" id="input_2" placeholder="Offence_Name" onkeyup="checkInput"></p>
+        
+        <p><input type="text" name="Penalty" id="input_3" placeholder="Penalty" onkeyup="checkInput"></p>
+        <p><input type="Description" name="Description" id="input_4" placeholder="Description" onkeyup="checkInput" ></p>
+        
+         <ul id="task-list">
+        <p><button id="btn-add" onclick="AddTask()">AddTask</button></p> 
+    
+        </ul>
+          
+      
+      </div>
+       
+          
+          <table>
+
+            <table width="1000px" border="1px" height="200">
+
+            <tr>
+                <th>Offence_id</th>
+                <th>Offence_Name</th>
+                <th>Penalty</th>
+                <th>Description</th>
+                
+                
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Stealing </td>
+                <td>300000 charge</td>
+                <td>He stole chicken</td>
+                
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>fighting </td>
+                <td>500000 charge</td>
+                <td>He fought a kid</td>
+                
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Robbery </td>
+                <td>Prison</td>
+                <td>He robbed people</td>
+                
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Alcoholism </td>
+                <td>300000 charge</td>
+                <td>She took alcohol</td>
+                
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Stealing </td>
+                <td>300000 charge</td>
+                <td>He stole a cow</td>
+                
+            </tr>
+          </table>
+
+        
+     
+</body>
+
+</html>
