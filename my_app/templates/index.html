@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="mine.css">
-    
-    
-    
-</head>
-    <a href="{% url 'criminal_page'%}">Criminal</a>
-    <a href="{% url 'offence_page'%}">Offence</a>
-    
-<body>
-    
+{% extends './base.html' %}
+{% block content %}
 
-    <section class="hero">
-        <h1>WELCOME TO GTS POLICE POST</h1>
-        <h2>LOCATION</h2>
+   
+        <h4>WELCOME TO GTS POLICE POST</h4>
+        <h4>LOCATION</h4>
         <P>We are located at plot 89 p.o.box 11 MOYO(u)</P>
-        <h2>OUR SERVICES</h2>
+        <h3>OUR SERVICES</h3>
         <p>We provide transport services at cheap prices to different parts of the country</p>
-        <h2>CONTACT US ON</h2>
+        <h4>CONTACT US ON</h4>
         <P>You can contact us on 0705669187/0787569691</P>
         
-    </section>
-
-    
-        
-            
-        
-    </section>
-    
-</body>
-</html>
+{% endblock content %}

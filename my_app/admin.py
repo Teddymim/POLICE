@@ -6,11 +6,11 @@ from .models import Criminal, Crime, Casuality, Witness, Offence
 
 
 class CriminalAdmin(admin.ModelAdmin):
-    list_display = ("criminal_name", "gender", "age", "next_of_kin")
+    list_display = ("criminal_name", "gender", "age", "next_of_kin" ,"criminal_photo")
 
 
 class CrimeAdmin(admin.ModelAdmin):
-    list_display = ("crime_date", "crime_time", "offence",  "location")
+    list_display = ("crime_date",  "offence",  "location")
 
 class CasualityAdmin(admin.ModelAdmin):
     list_display = ("crime", "casuality_name", "gender", "effect")
